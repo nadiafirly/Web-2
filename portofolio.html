@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body class="light-theme">
+  <nav class="navbar">
+    <div class="nav-logo">MyProfile</div>
+    <ul class="nav-links">
+      <li><a href="index.html">CV</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><button id="themeToggle">🌙</button></li>
+    </ul>
+  </nav>
+  <main class="content">
+    <section class="portfolio">
+      <h1>My Projects</h1>
+      <div class="project-list">
+        <div class="project-card">
+          <h2>Project Title 1</h2>
+          <p>Short description of the project, the tech used, and the purpose.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+        <div class="project-card">
+          <h2>Project Title 2</h2>
+          <p>Short description of another project, what it solves, or why it's interesting.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- styles.css -->
+  <style>
+    .portfolio h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--primary);
+    }
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    .project-card h2 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+    .project-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+  <!-- script.js -->
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    themeToggle.addEventListener('click', () => {
+      const isDark = body.classList.toggle('dark-theme');
+      body.classList.toggle('light-theme', !isDark);
+      themeToggle.textContent = isDark ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
