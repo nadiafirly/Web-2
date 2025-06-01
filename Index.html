@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My CV & Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body class="light-theme">
+  <nav class="navbar">
+    <div class="nav-logo">MyProfile</div>
+    <ul class="nav-links">
+      <li><a href="index.html">CV</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><button id="themeToggle">🌙</button></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <section class="cv">
+      <div class="photo">
+        <img src="pp.jpeg" alt="My Photo" />
+      </div>
+      <div class="cv-info">
+        <h1>Rinanda Putratama</h1>
+        <p><strong>Email:</strong> rinanda404@protonmail.com</p>
+        <p><strong>Phone:</strong> +62 812-3456-7890</p>
+        <h2>About Me</h2>
+        <p>Halo! Nama saya Rinanda Putratama.<br> Saya bersekolah di SMK Negeri 1 Sanden.<br> Saya selalu bersemangat untuk belajar dan mengembangkan diri agar bisa meraih cita-cita di masa depan.<br> Saya percaya dengan kerja keras dan tekad yang kuat, saya bisa mencapai tujuan saya.</p>
+        <h2>Education</h2>
+        <ul>
+          <li>SMK 1 Sanden</li>
+          <li>Universitas Harvard - insyaallah</li>
+        </ul>
+        <h2>Experience</h2>
+        <ul>
+          <li>Programer - Nasa Company - 2999</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
+<!-- styles.css -->
+<style>
+:root {
+  --bg-light: #f5f7fa;
+  --text-light: #1f1f1f;
+  --bg-dark: #1a1d29;
+  --text-dark: #e0e0e0;
+  --primary: #3d5afe;
+  --accent: #00e5ff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light-theme {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.dark-theme {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: white;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.nav-links a,
+.nav-links button {
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cv {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px var(--accent);
+}
+
+h1, h2 {
+  color: var(--primary);
+}
+</style>
+
+<!-- script.js -->
+<script>
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+  const isDark = body.classList.toggle('dark-theme');
+  body.classList.toggle('light-theme', !isDark);
+  themeToggle.textContent = isDark ? '☀️' : '🌙';
+});
+</script>
